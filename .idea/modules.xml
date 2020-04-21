@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/customerservice/customerservice.iml" filepath="$PROJECT_DIR$/customerservice/customerservice.iml" />
+      <module fileurl="file://$PROJECT_DIR$/eurekaserver/eurekaserver.iml" filepath="$PROJECT_DIR$/eurekaserver/eurekaserver.iml" />
+      <module fileurl="file://$PROJECT_DIR$/movies.iml" filepath="$PROJECT_DIR$/movies.iml" />
+      <module fileurl="file://$PROJECT_DIR$/movieservice/movieservice.iml" filepath="$PROJECT_DIR$/movieservice/movieservice.iml" />
+    </modules>
+  </component>
+</project>
