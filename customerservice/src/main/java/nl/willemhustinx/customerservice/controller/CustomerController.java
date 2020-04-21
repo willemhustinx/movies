@@ -32,7 +32,7 @@ public class CustomerController {
 
         System.out.println("ja hoor");
 
-        MovieDTO movieDTO = restTemplate.getForObject("http://MOVIE-SERVICE/movies/interests", MovieDTO.class);
+        MovieDTO movieDTO = restTemplate.getForObject("http://MOVIE-SERVICE/movies/first/movie", MovieDTO.class);
 
         System.out.println(movieDTO);
         //ResponseEntity<MovieDTO> forEntity = restTemplate.getForEntity("http://127.0.0.1:6001/movies/" + 1, MovieDTO.class);

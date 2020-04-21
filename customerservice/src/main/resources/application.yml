@@ -21,8 +21,10 @@ spring:
     console:
       enabled: true
 
-
 eureka:
   instance:
     lease-renewal-interval-in-seconds: 1
     leaseExpirationDurationInSeconds: 2
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8761/eureka/

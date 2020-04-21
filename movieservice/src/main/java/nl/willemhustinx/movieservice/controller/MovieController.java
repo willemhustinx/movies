@@ -38,7 +38,7 @@ public class MovieController {
         return new ResponseEntity<>(movie, new HttpHeaders(), HttpStatus.OK);
     }
 
-    @GetMapping("/iets/ja")
+    @GetMapping("/first/movie")
     public ResponseEntity<MovieDTO> getMovie() {
         System.out.println("1 film");
         MovieDTO movie = service.getMovieById(1L);
