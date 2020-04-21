@@ -26,35 +26,26 @@ public class CustomerController {
         this.restTemplate = restTemplate;
     }
 
+    @GetMapping("/movies")
+    public ResponseEntity<MovieDTO> getMoviesByInterest() {
+        //CustomerDTO customer = service.getCustomerById(customerID);
+
+        System.out.println("ja hoor");
+
+        MovieDTO movieDTO = restTemplate.getForObject("http://MOVIE-SERVICE/movies/interests", MovieDTO.class);
+
+        System.out.println(movieDTO);
+        //ResponseEntity<MovieDTO> forEntity = restTemplate.getForEntity("http://127.0.0.1:6001/movies/" + 1, MovieDTO.class);
+
+        //MovieDTO movie = forEntity.getBody();
+        //System.out.println(movie);
+
+        return new ResponseEntity<>(movieDTO, new HttpHeaders(), HttpStatus.OK);
+    }
+
     @GetMapping
     public ResponseEntity<List<CustomerDTO>> getAllCustomers() {
         List<CustomerDTO> list = service.getAllCustomers();
         return new ResponseEntity<>(list, new HttpHeaders(), HttpStatus.OK);
-    }
-
-    @GetMapping("{customerID}")
-    public ResponseEntity<CustomerDTO> getCustomerById(@PathVariable Long customerID) {
-        CustomerDTO customer = service.getCustomerById(customerID);
-
-        return new ResponseEntity<>(customer, new HttpHeaders(), HttpStatus.OK);
-    }
-
-    @GetMapping("movies/{customerID}")
-    public ResponseEntity<MovieDTO> getMoviesByInterest(@PathVariable Long customerID) {
-        CustomerDTO customer = service.getCustomerById(customerID);
-
-        System.out.println("ja hoor");
-
-        //ResponseEntity<MovieDTO> forEntity = restTemplate.getForEntity("http://MOVIE-SERVICE/movies/interest/", MovieDTO.class);
-
-        System.out.println(restTemplate.toString());
-
-
-        ResponseEntity<MovieDTO> forEntity = restTemplate.getForEntity("http://127.0.0.1:6001/movies/" + 1, MovieDTO.class);
-
-        MovieDTO movie = forEntity.getBody();
-        System.out.println(movie);
-
-        return new ResponseEntity<>(movie, new HttpHeaders(), HttpStatus.OK);
     }
 }

@@ -22,15 +22,26 @@ public class MovieController {
         this.service = movieService;
     }
 
+
     @GetMapping
     public ResponseEntity<List<MovieDTO>> getAllMovies() {
         List<MovieDTO> list = service.getAllMovies();
         return new ResponseEntity<>(list, new HttpHeaders(), HttpStatus.OK);
     }
 
-    @GetMapping("{movieID}")
+
+
+    @GetMapping("/single/{movieID}")
     public ResponseEntity<MovieDTO> getMovieById(@PathVariable Long movieID) {
         MovieDTO movie = service.getMovieById(movieID);
+
+        return new ResponseEntity<>(movie, new HttpHeaders(), HttpStatus.OK);
+    }
+
+    @GetMapping("/iets/ja")
+    public ResponseEntity<MovieDTO> getMovie() {
+        System.out.println("1 film");
+        MovieDTO movie = service.getMovieById(1L);
 
         return new ResponseEntity<>(movie, new HttpHeaders(), HttpStatus.OK);
     }
